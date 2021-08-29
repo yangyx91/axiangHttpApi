@@ -1,0 +1,8 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/axiang.Log.Http/bin/Debug/net5.0
+/axiang.Log.Http/obj
+/axiang.Log.Service/bin/Debug/netstandard2.1
+/axiang.Log.Service/obj
