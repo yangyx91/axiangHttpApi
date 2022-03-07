@@ -6,3 +6,13 @@
 /axiang.Log.Http/obj
 /axiang.Log.Service/bin/Debug/netstandard2.1
 /axiang.Log.Service/obj
+/axiangHttpApi.Application/bin/Debug/net6.0
+/axiangHttpApi.Application/obj
+/axiangHttpApi.Core/bin/Debug/net6.0
+/axiangHttpApi.Core/obj
+/axiangHttpApi.Web.Core/bin/Debug/net6.0
+/axiangHttpApi.Web.Core/obj
+/axiangHttpApi.Web.Entry/bin/Debug/net6.0
+/axiangHttpApi.Web.Entry/obj
+/.vs/axiangHttpLog/v17
+/.vs/axiangHttp.Api
