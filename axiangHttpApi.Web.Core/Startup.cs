@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using axiangHttpApi.Application;
 
 namespace axiangHttpApi.Web.Core
 {
@@ -12,6 +13,7 @@ namespace axiangHttpApi.Web.Core
         {
             services.AddCorsAccessor();
             services.AddControllers().AddInject();
+            services.AddConfigurableOptions<AppInfoOptions>();
         }
 
         public void Configure(IApplicationBuilder app,IWebHostEnvironment env)
