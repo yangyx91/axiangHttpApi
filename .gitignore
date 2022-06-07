@@ -16,3 +16,8 @@
 /axiangHttpApi.Web.Entry/obj
 /.vs/axiangHttpLog/v17
 /.vs/axiangHttp.Api
+/axiangHttpApi.Application/bin/Release/net6.0
+/axiangHttpApi.Core/bin/Release/net6.0
+/axiangHttpApi.Web.Core/bin/Release/net6.0
+/axiangHttpApi.Web.Entry/bin/Release/net6.0
+/axiangHttpApi.Web.Entry/Properties/PublishProfiles
