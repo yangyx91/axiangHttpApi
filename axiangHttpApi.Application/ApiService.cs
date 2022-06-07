@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 using Furion;
 using Microsoft.AspNetCore.Mvc;
+using SqlSugar;
 
 namespace axiangHttpApi.Application
 {
@@ -9,9 +10,14 @@ namespace axiangHttpApi.Application
     {
         private readonly AppInfoOptions _options;
 
-        public ApiService(IOptions<AppInfoOptions> options)
+        private readonly ISqlSugarClient _db;
+
+        public ApiService(
+            IOptions<AppInfoOptions> options,
+            ISqlSugarClient db)
         {
             _options = options.Value;
+            _db = db;
         }
         /// <summary>
         /// 接口：A
