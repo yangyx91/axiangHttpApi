@@ -51,8 +51,10 @@ namespace axiangHttpApi.Application
             return leftjoinResult;
         }
 
+        [SugarTable("student")]
         public class StudentModel
         {
+            [SugarColumn(IsPrimaryKey = true)]
             public int Id { get; set; }
 
             public string StudentName { get; set; }
@@ -62,8 +64,10 @@ namespace axiangHttpApi.Application
             public int CourseId { get; set; }
         }
 
+        [SugarTable("course")]
         public class CourseModel
         {
+            [SugarColumn(IsPrimaryKey = true)]
             public int Id { get; set; }
 
             public string CourseName { get; set; }
