@@ -29,10 +29,18 @@ namespace axiangHttpApi.Web.Core
                     new ConnectionConfig()
                     {
                         IsAutoCloseConnection=true,
-                        DbType=DbType.MySql,
+                        DbType=DbType.SqlServer,
                         ConnectionString=
                         configuration.GetConnectionString("xxxx"),
                         ConfigId="1"
+                    },
+                     new ConnectionConfig()
+                    {
+                        IsAutoCloseConnection=true,
+                        DbType=DbType.Sqlite,
+                        ConnectionString=
+                        configuration.GetConnectionString("xxxx"),
+                        ConfigId="2"
                     }
             }) ;
             services.AddSingleton<ISqlSugarClient>(sqlSugar);

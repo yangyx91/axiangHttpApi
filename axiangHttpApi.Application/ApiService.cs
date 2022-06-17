@@ -34,5 +34,41 @@ namespace axiangHttpApi.Application
             var appoptions = App.GetOptions<AppInfoOptions>();
             return _options;
         }
-    }
+        public async Task<object> PostC()
+        {
+            var total = 0;
+            var db = (_db as ITenant).GetConnection("0");
+            var students = await db.Queryable<StudentModel>().Where(x => x.isDeleted == 0).ToPageListAsync(1, 50, total);
+            db = (_db as ITenant).GetConnection("1");
+            var otherstudents = await db.Queryable<StudentModel>().Where(x => x.isDeleted == 0).ToPageListAsync(1, 50, total);
+            var sids = otherstudents.Select(x => x.Id).Distinct();
+
+            var leftjoinResult = await _db.Queryable<StudentModel>()
+            .LeftJoin<CourseModel>((o, cus) => o.CourseId == cus.Id)
+            .Where(o => o.isDeleted == 0)
+            .Select((o, cus) => new { Id = o.Id, CustomName = cus.CourseName })
+            .ToPageListAsync(1, 50, total);
+            return leftjoinResult;
+        }
+
+        public class StudentModel
+        {
+            public int Id { get; set; }
+
+            public string StudentName { get; set; }
+
+            public int isDeleted { get; set; }
+
+            public int CourseId { get; set; }
+        }
+
+        public class CourseModel
+        {
+            public int Id { get; set; }
+
+            public string CourseName { get; set; }
+
+            public int isDeleted { get; set; }
+        }
+    } 
 }
